@@ -16,6 +16,7 @@
 		55F986BF1D356E940029C9A3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55F986BD1D356E940029C9A3 /* LaunchScreen.storyboard */; };
 		55F986C81D356F080029C9A3 /* ToDo.m in Sources */ = {isa = PBXBuildFile; fileRef = 55F986C71D356F080029C9A3 /* ToDo.m */; };
 		55F986CB1D35759A0029C9A3 /* ToDoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 55F986CA1D35759A0029C9A3 /* ToDoCell.m */; };
+		55F986D11D3593220029C9A3 /* NewToDoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55F986D01D3593220029C9A3 /* NewToDoViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,8 @@
 		55F986C71D356F080029C9A3 /* ToDo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToDo.m; sourceTree = "<group>"; };
 		55F986C91D35759A0029C9A3 /* ToDoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToDoCell.h; sourceTree = "<group>"; };
 		55F986CA1D35759A0029C9A3 /* ToDoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToDoCell.m; sourceTree = "<group>"; };
+		55F986CF1D3593220029C9A3 /* NewToDoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NewToDoViewController.h; path = ../NewToDoViewController.h; sourceTree = "<group>"; };
+		55F986D01D3593220029C9A3 /* NewToDoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NewToDoViewController.m; path = ../NewToDoViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +74,8 @@
 				55F986B01D356E940029C9A3 /* AppDelegate.m */,
 				55F986B21D356E940029C9A3 /* MasterViewController.h */,
 				55F986B31D356E940029C9A3 /* MasterViewController.m */,
+				55F986CF1D3593220029C9A3 /* NewToDoViewController.h */,
+				55F986D01D3593220029C9A3 /* NewToDoViewController.m */,
 				55F986C91D35759A0029C9A3 /* ToDoCell.h */,
 				55F986CA1D35759A0029C9A3 /* ToDoCell.m */,
 				55F986B51D356E940029C9A3 /* DetailViewController.h */,
@@ -166,6 +171,7 @@
 			files = (
 				55F986C81D356F080029C9A3 /* ToDo.m in Sources */,
 				55F986B11D356E940029C9A3 /* AppDelegate.m in Sources */,
+				55F986D11D3593220029C9A3 /* NewToDoViewController.m in Sources */,
 				55F986B41D356E940029C9A3 /* MasterViewController.m in Sources */,
 				55F986AE1D356E940029C9A3 /* main.m in Sources */,
 				55F986B71D356E940029C9A3 /* DetailViewController.m in Sources */,

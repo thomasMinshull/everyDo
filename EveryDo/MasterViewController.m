@@ -75,12 +75,19 @@
 }
 
 - (void)insertNewObject:(id)sender {
-    if (!self.objects) {
-        self.objects = [[NSMutableArray alloc] init];
-    }
-    [self.objects insertObject:[NSDate date] atIndex:0];
-    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
-    [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+    [self performSegueWithIdentifier:@"NewToDoSegue" sender:self];
+    
+//    if (!self.objects) {
+//        self.objects = [[NSMutableArray alloc] init];
+//    }
+//    [self.objects insertObject:[NSDate date] atIndex:0];
+//    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
+//    [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+}
+
+- (void)newToDoCreated:(ToDo *)todo {
+    [self.objects addObject:todo];
+    [self.tableView reloadData];
 }
 
 #pragma mark - Segues
@@ -91,6 +98,9 @@
         ToDo *object = self.objects[indexPath.row];
         DetailViewController *controller = (DetailViewController *)[segue destinationViewController];
         [controller setDetailItem:object];
+    } else if ([[segue identifier] isEqualToString:@"NewToDoSegue"]) {
+        NewToDoViewController *controller = (NewToDoViewController *)[segue destinationViewController];
+        controller.delegate = self;
     }
 }
 
