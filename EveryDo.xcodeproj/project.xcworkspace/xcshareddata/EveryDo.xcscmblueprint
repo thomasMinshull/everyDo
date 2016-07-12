@@ -8,12 +8,12 @@
   },
   "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "39A3BEBE-4731-47F1-A6B8-062407A7C6D1",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
-    "706F4A4526C7FD0BAC2C817B23C8DB0034CAEA13" : "",
-    "F2800A697EB7AE359E57277ABC73C9A16534F343" : ".."
+    "706F4A4526C7FD0BAC2C817B23C8DB0034CAEA13" : "..",
+    "F2800A697EB7AE359E57277ABC73C9A16534F343" : "..\/.."
   },
   "DVTSourceControlWorkspaceBlueprintNameKey" : "EveryDo",
   "DVTSourceControlWorkspaceBlueprintVersion" : 204,
-  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "EveryDo\/EveryDo.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "EveryDo.xcodeproj",
   "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
     {
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/thomasMinshull\/2PlayerMath.git",

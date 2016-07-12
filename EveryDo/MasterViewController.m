@@ -8,6 +8,8 @@
 
 #import "MasterViewController.h"
 #import "DetailViewController.h"
+#import "ToDo.h"
+#import "ToDoCell.h"
 
 @interface MasterViewController ()
 
@@ -23,6 +25,45 @@
 
     UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
     self.navigationItem.rightBarButtonItem = addButton;
+    
+    ToDo *td1, *td2, *td3, *td4, *td5;
+    
+    td1 = [ToDo new];
+    td2 = [ToDo new];
+    td3 = [ToDo new];
+    td4 = [ToDo new];
+    td5 = [ToDo new];
+    
+    td1.title = @"Hello World";
+    td1.toDoDescription = @"Wear sunscrean, the rest of my advice...";
+    td1.priority = 1;
+    td1.completed = false;
+    
+    td2.title = @"Good Bye World";
+    td2.toDoDescription = @"I hurt my self today, to prove that I still feel. I focused on the pain the only thing that's real";
+    td2.priority = 2;
+    td2.completed = TRUE;
+    
+    td3.title = @"foo";
+    td3.toDoDescription = @"Bar bar bar bar bar bar";
+    td3.priority = 1;
+    td3.completed = false;
+    
+    td4.title = @"Run to the hills";
+    td4.toDoDescription = @"Run for your LIIIIIFFEEE";
+    td4.priority = 1;
+    td4.completed = TRUE;
+    
+    td5.title = @"Ziggy";
+    td5.toDoDescription = @"This is ground control to major Tom's";
+    td5.priority = 1;
+    td5.completed = false;
+    
+    
+    self.objects = [@[td1, td2, td3, td4, td5] mutableCopy];
+    
+    self.tableView.rowHeight = UITableViewAutomaticDimension;
+    self.tableView.estimatedRowHeight = 114.0;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -47,7 +88,7 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([[segue identifier] isEqualToString:@"showDetail"]) {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        NSDate *object = self.objects[indexPath.row];
+        ToDo *object = self.objects[indexPath.row];
         DetailViewController *controller = (DetailViewController *)[segue destinationViewController];
         [controller setDetailItem:object];
     }
@@ -64,10 +105,8 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
-
-    NSDate *object = self.objects[indexPath.row];
-    cell.textLabel.text = [object description];
+    ToDoCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
+    [cell configureCellwithToDo:self.objects[indexPath.row]];
     return cell;
 }
 
