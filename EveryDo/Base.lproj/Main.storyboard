@@ -75,7 +75,7 @@
                                 </variation>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pDk-Gv-Dbe">
-                                <rect key="frame" x="319" y="203" width="97" height="30"/>
+                                <rect key="frame" x="319" y="203" width="200" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="97" id="IzS-jS-f2e"/>
                                 </constraints>
@@ -89,7 +89,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="w01-55-mdO">
-                                <rect key="frame" x="319" y="285" width="97" height="30"/>
+                                <rect key="frame" x="319" y="285" width="200" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="97" id="seo-7J-UuA"/>
                                 </constraints>
@@ -108,10 +108,12 @@
                             <constraint firstItem="F6c-Re-IpQ" firstAttribute="trailing" secondItem="yMx-hm-urt" secondAttribute="trailing" id="0ge-1H-75w"/>
                             <constraint firstItem="pDk-Gv-Dbe" firstAttribute="leading" secondItem="OoI-PL-rMr" secondAttribute="leading" id="3nY-ga-MH3"/>
                             <constraint firstItem="osW-Hb-SKW" firstAttribute="centerY" secondItem="Bmz-hw-stc" secondAttribute="centerY" id="4RX-un-Re1"/>
+                            <constraint firstItem="pDk-Gv-Dbe" firstAttribute="width" secondItem="OoI-PL-rMr" secondAttribute="width" id="GTJ-NE-uwk"/>
                             <constraint firstItem="OoI-PL-rMr" firstAttribute="width" secondItem="jKQ-Bo-M3D" secondAttribute="width" multiplier="1:3" id="HiM-VZ-n8P"/>
                             <constraint firstItem="OoI-PL-rMr" firstAttribute="centerY" secondItem="ixM-RN-qyr" secondAttribute="centerY" id="JFQ-eJ-dXU"/>
                             <constraint firstAttribute="trailingMargin" secondItem="kl6-NZ-lmr" secondAttribute="trailing" constant="-1" id="Kgd-hh-guU"/>
                             <constraint firstItem="ixM-RN-qyr" firstAttribute="trailing" secondItem="jKQ-Bo-M3D" secondAttribute="centerX" id="N30-RP-aYj"/>
+                            <constraint firstItem="w01-55-mdO" firstAttribute="width" secondItem="OoI-PL-rMr" secondAttribute="width" id="NVU-Zc-tJj"/>
                             <constraint firstItem="osW-Hb-SKW" firstAttribute="centerX" secondItem="jKQ-Bo-M3D" secondAttribute="centerX" id="SfV-0d-lGW"/>
                             <constraint firstItem="w01-55-mdO" firstAttribute="leading" secondItem="OoI-PL-rMr" secondAttribute="leading" id="Tkl-in-T6X"/>
                             <constraint firstItem="pDk-Gv-Dbe" firstAttribute="centerY" secondItem="yMx-hm-urt" secondAttribute="centerY" id="Tmt-Ok-dGa"/>
@@ -137,7 +139,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fLa-MB-r9Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="797" y="-1308"/>
+            <point key="canvasLocation" x="709" y="-1450"/>
         </scene>
         <!--Detail-->
         <scene sceneID="yUG-lL-AsK">
@@ -230,6 +232,7 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
                                 <connections>
                                     <outlet property="descriptionLabel" destination="mB3-Ud-ysA" id="FQO-BR-WyV"/>
                                     <outlet property="priorityLabel" destination="TCE-Ob-mmL" id="JsQ-aq-0Wu"/>

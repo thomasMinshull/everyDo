@@ -76,19 +76,21 @@
 
 - (void)insertNewObject:(id)sender {
     [self performSegueWithIdentifier:@"NewToDoSegue" sender:self];
-    
-//    if (!self.objects) {
-//        self.objects = [[NSMutableArray alloc] init];
-//    }
-//    [self.objects insertObject:[NSDate date] atIndex:0];
-//    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
-//    [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
 }
 
 - (void)newToDoCreated:(ToDo *)todo {
     [self.objects addObject:todo];
     [self.tableView reloadData];
 }
+
+
+#pragma mark - UpdateToDoCellDelegate Methods 
+
+- (void)updateToDoCell:(ToDoCell *)cell {
+    NSIndexPath *updatedCellIP = [self.tableView indexPathForCell:cell];
+    [self.tableView reloadRowsAtIndexPaths:@[updatedCellIP] withRowAnimation:UITableViewRowAnimationRight];
+}
+
 
 #pragma mark - Segues
 
@@ -117,6 +119,9 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     ToDoCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
     [cell configureCellwithToDo:self.objects[indexPath.row]];
+    
+    cell.delegate = self;
+    
     return cell;
 }
 

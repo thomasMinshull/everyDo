@@ -12,7 +12,7 @@
 @interface ToDoCell ()
 
 
-@property (strong, nonatomic) ToDo *toDo;
+@property (weak, nonatomic) ToDo *toDo;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *descriptionLabel;
 @property (weak, nonatomic) IBOutlet UILabel *priorityLabel;
@@ -21,7 +21,16 @@
 
 @implementation ToDoCell
 
+- (void)awakeFromNib {
+    [super awakeFromNib];
+    
+    UISwipeGestureRecognizer *swipeGesture = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(updatedCompletedStatus:)];
+    [swipeGesture setDirection:UISwipeGestureRecognizerDirectionRight];
+    [self.contentView addGestureRecognizer:swipeGesture];
+}
+
 - (void)configureCellwithToDo:(ToDo *)toDo {
+    self.toDo = toDo;
     self.titleLabel.text = toDo.title;
     self.priorityLabel.text = [NSString stringWithFormat:@"%d", toDo.priority];
     
@@ -31,14 +40,22 @@
         attributes = @{
                        NSStrikethroughStyleAttributeName: [NSNumber numberWithInt:NSUnderlineStyleSingle]
                                      };
-//        descriptionString = [[NSAttributedString alloc] initWithString:toDo.toDoDescription attributes:attributes];
     } else {
         attributes = @{};
-//        descriptionString = [[NSAttributedString alloc] initWithString:toDo.toDoDescription
     }
     descriptionString = [[NSAttributedString alloc] initWithString:toDo.toDoDescription attributes:attributes];
     
-    [self.descriptionLabel setAttributedText: descriptionString];
+    [self.descriptionLabel setAttributedText:descriptionString];
+}
+
+- (void)updatedCompletedStatus:(UISwipeGestureRecognizer *)sender {
+    if (self.toDo.isCompleted) {
+        self.toDo.completed = NO;
+    } else {
+        self.toDo.completed = YES;
+    }
+    
+    [self.delegate updateToDoCell:self];
 }
 
 @end

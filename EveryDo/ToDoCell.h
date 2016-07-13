@@ -9,7 +9,17 @@
 #import <UIKit/UIKit.h>
 #import "ToDo.h"
 
+@class ToDoCell;
+
+@protocol UpdateToDoCellDelegate <NSObject>
+
+- (void)updateToDoCell:(ToDoCell *)cell;
+
+@end
+
 @interface ToDoCell : UITableViewCell
+
+@property (weak, nonatomic) id<UpdateToDoCellDelegate> delegate;
 
 -(void)configureCellwithToDo:(ToDo *)toDo;
 
